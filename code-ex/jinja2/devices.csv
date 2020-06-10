@@ -1,0 +1,4 @@
+hostname,loop0_ip,loop0_mask,snmp_ro,snmp_rw
+csr1,1.1.1.1,255.255.255.255,public,private
+csr2,1.1.1.2,255.255.255.255,public,private
+csr3,1.1.1.3,255.255.255.255,public,private
