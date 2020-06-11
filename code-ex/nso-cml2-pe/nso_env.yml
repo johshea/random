@@ -1,0 +1,46 @@
+---
+nsoip: 192.168.56.200
+nsoport: 8080
+devices:
+   r1:
+    name: 'ios10'
+    ip: "172.16.149.140"
+    port: "22"
+    state: 'unlocked'
+    authgroup: 'csrauth'
+    cli: 'cisco-ios-cli-3.8'
+    devicegroup: 'backbone-rtr'
+   r2:
+    name: 'ios11'
+    ip: "172.16.149.144"
+    port: "22"
+    state: 'unlocked'
+    authgroup: 'csrauth'
+    cli: 'cisco-ios-cli-3.8'
+    devicegroup: 'backbone-rtr'
+   sw1:
+    name: 'nxos1'
+    ip: '172.16.149.142'
+    port: '22'
+    state: 'unlocked'
+    authgroup: 'nxosauth'
+    cli: 'cisco-nx-cli-3.0'
+    devicegroup: 'datacenter-sw'
+
+device-groups:
+   backbonertr:
+    name: 'backbone-rtr'
+   campusrtr:
+    name: 'campus-rtr'
+   datacentersw:
+    name: 'datacenter-sw'
+   campussw:
+    name: 'campus-sw'
+
+
+
+
+
+
+
+

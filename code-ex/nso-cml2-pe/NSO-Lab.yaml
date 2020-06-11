@@ -1,0 +1,567 @@
+lab:
+  description: ''
+  notes: ''
+  timestamp: 1589304728.36553
+  title: NSO-Lab
+  version: 0.0.3
+nodes:
+  - id: n1
+    label: ext-conn-0
+    node_definition: external_connector
+    x: -100
+    y: -500
+    configuration: bridge0
+    tags: []
+    interfaces:
+      - id: i0
+        slot: 0
+        label: port
+        type: physical
+  - id: n2
+    label: csr1000v-1
+    node_definition: csr1000v
+    x: 200
+    y: -450
+    configuration: "Building configuration...\n\nCurrent configuration : 6398 bytes\n\
+      !\n! Last configuration change at 21:26:04 UTC Wed Jun 10 2020\n!\nversion 16.11\n\
+      service timestamps debug datetime msec\nservice timestamps log datetime msec\n\
+      service password-encryption\n! Call-home is enabled by Smart-Licensing.\nservice\
+      \ call-home\nplatform qfp utilization monitor load 80\nno platform punt-keepalive\
+      \ disable-kernel-core\nplatform console serial\n!\nhostname Router\n!\nboot-start-marker\n\
+      boot-end-marker\n!\n!\nno logging console\nenable secret 9 $9$IS47uxysAZsCWE$8Zfk2W5utqAcmPvnqTm6lANbF6cVcgzClqqbRd1x/CY\n\
+      !\naaa new-model\n!\n!\n!\n!\n!\n!\n!\naaa session-id common\ncall-home\n !\
+      \ If contact email address in call-home is configured as sch-smart-licensing@cisco.com\n\
+      \ ! the email address configured in Cisco Smart License Portal will be used\
+      \ as contact email address to send SCH notifications.\n contact-email-addr sch-smart-licensing@cisco.com\n\
+      \ profile \"CiscoTAC-1\"\n  active\n  destination transport-method http\n  no\
+      \ destination transport-method email\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlogin on-success\
+      \ log\n!\n!\n!\n!\n!\n!\n!\nsubscriber templating\n!\n!\n!\n!\n!\n!\nmultilink\
+      \ bundle-name authenticated\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki\
+      \ trustpoint TP-self-signed-3583303660\n enrollment selfsigned\n subject-name\
+      \ cn=IOS-Self-Signed-Certificate-3583303660\n revocation-check none\n rsakeypair\
+      \ TP-self-signed-3583303660\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment\
+      \ pkcs12\n revocation-check crl\n!\n!\ncrypto pki certificate chain TP-self-signed-3583303660\n\
+      \ certificate self-signed 01\n  30820330 30820218 A0030201 02020101 300D0609\
+      \ 2A864886 F70D0101 05050030\n  31312F30 2D060355 04031326 494F532D 53656C66\
+      \ 2D536967 6E65642D 43657274\n  69666963 6174652D 33353833 33303336 3630301E\
+      \ 170D3230 30363130 31353234\n  35335A17 0D333030 31303130 30303030 305A3031\
+      \ 312F302D 06035504 03132649\n  4F532D53 656C662D 5369676E 65642D43 65727469\
+      \ 66696361 74652D33 35383333\n  30333636 30308201 22300D06 092A8648 86F70D01\
+      \ 01010500 0382010F 00308201\n  0A028201 01008E56 C71EDF1A 404D4101 41FEE8AC\
+      \ 65543E03 A1409FE4 28E35A77\n  181A6DE8 95D50E86 4F92A65A 6E7A0770 7625197C\
+      \ AE205218 26C679EB 01A22373\n  CB251AEE 8DF4C96D A08F530D BEE788ED CAB59A53\
+      \ B31A0E94 F7F5F038 41031637\n  3EC7D4B8 ADFE4B9E 2FF646CE 0C8AE834 D549E213\
+      \ 8F3C6F73 B7C8101C FB275A2A\n  28B8ABFA 3B8B93BD 52C8B9D6 76858FF1 17F0780E\
+      \ 96A62EEA 2E33EED9 3021530F\n  81ADC17A D747C526 44B15F30 9503161D 1DD89520\
+      \ FC55E310 518BA687 BA17D32B\n  D76E155E ECCFF202 93502DBA FB172422 4B6F371C\
+      \ 685F8712 946D1E98 FEE8081C\n  7B8E1A4D 8815FB9C 7A8A0130 F486FC1C 489113A2\
+      \ F42EB162 84BBFF5C 36CB28D1\n  19DB79E1 C6A30203 010001A3 53305130 0F060355\
+      \ 1D130101 FF040530 030101FF\n  301F0603 551D2304 18301680 147AA70D 79EBCDFF\
+      \ 43F12D6A 4902281D 07B04C49\n  BD301D06 03551D0E 04160414 7AA70D79 EBCDFF43\
+      \ F12D6A49 02281D07 B04C49BD\n  300D0609 2A864886 F70D0101 05050003 82010100\
+      \ 83882351 97E41B48 98697E3E\n  729A9C78 7A6C9287 22570EB7 4CAC28A3 BD5D8FF4\
+      \ 4C4BC129 D0603F0C E2FB0846\n  AE518351 269D7BB6 EC3D652F 7B9DB1ED 5A928AB1\
+      \ 1A264892 76FA4AFA C2B2FC7F\n  39D723FF 34CDF406 0CAB97C7 0B1E0E79 3E3C33FB\
+      \ 20F56ED7 29013C1E 3E8014D7\n  C97F68DF D3D3EB12 CC1698B6 B06703EA F8D5784C\
+      \ 250E3AC1 A8A940B6 8935009E\n  C88890C6 175BD648 D8102B33 26916A5B 9BFDFF5B\
+      \ 9B9454B0 DAC7B059 68B95970\n  03D7FFAC C57728E0 81DB6B60 CB1D6B89 83318C45\
+      \ 74F7CA68 80E60920 536E33C1\n  DDC5523C 14AE0D23 EC127293 11362448 E1A47179\
+      \ B8DF8C5A E05F9C7B 29ABD6DE\n  10BCC068 8DD1E98D B03F43E0 7555E50B 9454A6EA\n\
+      \  \tquit\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n\
+      \  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+      \  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363\n\
+      \  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934\n\
+      \  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305\n\
+      \  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720\n\
+      \  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n\
+      \  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n\
+      \  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n\
+      \  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n\
+      \  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n\
+      \  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n\
+      \  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n\
+      \  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n\
+      \  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n\
+      \  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201\n\
+      \  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85\n\
+      \  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n\
+      \  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n\
+      \  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n\
+      \  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n\
+      \  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n\
+      \  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n\
+      \  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n\
+      \  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n\
+      \  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n\
+      \  D697DF7F 28\n  \tquit\n!\nlicense udi pid CSR1000V sn 9T620WFIM69\ndiagnostic\
+      \ bootup level minimal\n!\nspanning-tree extend system-id\nmemory free low-watermark\
+      \ processor 80526\n!\n!\n!\nusername cisco privilege 15 password 7 05080F1C2243\n\
+      username admin privilege 15 password 7 0005170B0D55\n!\nredundancy\n!\n!\n!\n\
+      !\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface GigabitEthernet1\n\
+      \ description interface to bridge - DHCP\n ip address dhcp\n negotiation auto\n\
+      \ no mop enabled\n no mop sysid\n!\ninterface GigabitEthernet2\n no ip address\n\
+      \ shutdown\n negotiation auto\n no mop enabled\n no mop sysid\n!\ninterface\
+      \ GigabitEthernet3\n no ip address\n shutdown\n negotiation auto\n no mop enabled\n\
+      \ no mop sysid\n!\ninterface GigabitEthernet4\n no ip address\n shutdown\n negotiation\
+      \ auto\n no mop enabled\n no mop sysid\n!\nip forward-protocol nd\nip http server\n\
+      ip http authentication local\nip http secure-server\nip http client source-interface\
+      \ GigabitEthernet1\nip route 0.0.0.0 0.0.0.0 172.16.149.1\n!\n!\n!\n!\n!\n!\n\
+      !\n!\n!\n!\ncontrol-plane\n!\n!\n!\n!\n!\n!\nline con 0\n exec-timeout 0 0\n\
+      \ stopbits 1\nline vty 0 4\n!\n!\n!\n!\n!\n!\nend"
+    image_definition: csr1000v-161101b
+    tags: []
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        slot: 0
+        label: GigabitEthernet1
+        type: physical
+      - id: i2
+        slot: 1
+        label: GigabitEthernet2
+        type: physical
+      - id: i3
+        slot: 2
+        label: GigabitEthernet3
+        type: physical
+      - id: i4
+        slot: 3
+        label: GigabitEthernet4
+        type: physical
+  - id: n3
+    label: unmanaged-switch-0
+    node_definition: unmanaged_switch
+    x: 50
+    y: -500
+    configuration: ''
+    tags: []
+    interfaces:
+      - id: i0
+        slot: 0
+        label: port0
+        type: physical
+      - id: i1
+        slot: 1
+        label: port1
+        type: physical
+      - id: i2
+        slot: 2
+        label: port2
+        type: physical
+      - id: i3
+        slot: 3
+        label: port3
+        type: physical
+      - id: i4
+        slot: 4
+        label: port4
+        type: physical
+      - id: i5
+        slot: 5
+        label: port5
+        type: physical
+      - id: i6
+        slot: 6
+        label: port6
+        type: physical
+      - id: i7
+        slot: 7
+        label: port7
+        type: physical
+  - id: n4
+    label: nxos9000-0
+    node_definition: nxosv9000
+    x: 300
+    y: -500
+    configuration: |2-
+
+      !Command: show running-config
+      !Running configuration last done at: Wed Jun 10 22:08:07 2020
+      !Time: Wed Jun 10 22:08:09 2020
+
+      version 9.2(3) Bios:version
+      vdc switch id 1
+        limit-resource vlan minimum 16 maximum 4094
+        limit-resource vrf minimum 2 maximum 4096
+        limit-resource port-channel minimum 0 maximum 511
+        limit-resource u4route-mem minimum 128 maximum 128
+        limit-resource u6route-mem minimum 96 maximum 96
+        limit-resource m4route-mem minimum 58 maximum 58
+        limit-resource m6route-mem minimum 8 maximum 8
+      feature ospf
+      feature bgp
+      feature hsrp
+      feature dhcp
+
+      no password strength-check
+      username admin password 5 $5$S3ccRgwy$PJECB4lQgAfECjleANKfeIEAOGJXJdxkvtyvvLl9wZ.  role network-admin
+      username cisco password 5 $5$YYag8ovL$7HV.xn95AvZKNAl3SA1ugxUrv2unaTQ9hcS4f4PyHmC  role network-admin
+      username cisco passphrase  lifetime 99999 warntime 14 gracetime 3
+      ip domain-lookup
+      ip name-server 172.16.149.2 use-vrf management
+      snmp-server user admin network-admin auth md5 0x0ecff17ef3ffc8e9b6d0cf32d55e59ce priv 0x0ecff17ef3ffc8e9b6d0cf32d55e59ce localizedkey
+      snmp-server user cisco network-admin auth md5 0x0ecff17ef3ffc8e9b6d0cf32d55e59ce priv 0x0ecff17ef3ffc8e9b6d0cf32d55e59ce localizedkey
+      rmon event 1 description FATAL(1) owner PMON@FATAL
+      rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+      rmon event 3 description ERROR(3) owner PMON@ERROR
+      rmon event 4 description WARNING(4) owner PMON@WARNING
+      rmon event 5 description INFORMATION(5) owner PMON@INFO
+
+      vlan 1
+
+      service dhcp
+      ip dhcp relay
+      ipv6 dhcp relay
+      vrf context management
+        ip route 0.0.0.0/0 172.16.149.2
+
+
+      interface Ethernet1/1
+
+      interface Ethernet1/2
+
+      interface Ethernet1/3
+
+      interface Ethernet1/4
+
+      interface Ethernet1/5
+
+      interface Ethernet1/6
+
+      interface Ethernet1/7
+
+      interface Ethernet1/8
+
+      interface Ethernet1/9
+
+      interface Ethernet1/10
+
+      interface Ethernet1/11
+
+      interface Ethernet1/12
+
+      interface Ethernet1/13
+
+      interface Ethernet1/14
+
+      interface Ethernet1/15
+
+      interface Ethernet1/16
+
+      interface Ethernet1/17
+
+      interface Ethernet1/18
+
+      interface Ethernet1/19
+
+      interface Ethernet1/20
+
+      interface Ethernet1/21
+
+      interface Ethernet1/22
+
+      interface Ethernet1/23
+
+      interface Ethernet1/24
+
+      interface Ethernet1/25
+
+      interface Ethernet1/26
+
+      interface Ethernet1/27
+
+      interface Ethernet1/28
+
+      interface Ethernet1/29
+
+      interface Ethernet1/30
+
+      interface Ethernet1/31
+
+      interface Ethernet1/32
+
+      interface Ethernet1/33
+
+      interface Ethernet1/34
+
+      interface Ethernet1/35
+
+      interface Ethernet1/36
+
+      interface Ethernet1/37
+
+      interface Ethernet1/38
+
+      interface Ethernet1/39
+
+      interface Ethernet1/40
+
+      interface Ethernet1/41
+
+      interface Ethernet1/42
+
+      interface Ethernet1/43
+
+      interface Ethernet1/44
+
+      interface Ethernet1/45
+
+      interface Ethernet1/46
+
+      interface Ethernet1/47
+
+      interface Ethernet1/48
+
+      interface Ethernet1/49
+
+      interface Ethernet1/50
+
+      interface Ethernet1/51
+
+      interface Ethernet1/52
+
+      interface Ethernet1/53
+
+      interface Ethernet1/54
+
+      interface Ethernet1/55
+
+      interface Ethernet1/56
+
+      interface Ethernet1/57
+
+      interface Ethernet1/58
+
+      interface Ethernet1/59
+
+      interface Ethernet1/60
+
+      interface Ethernet1/61
+
+      interface Ethernet1/62
+
+      interface Ethernet1/63
+
+      interface Ethernet1/64
+
+      interface Ethernet1/65
+
+      interface Ethernet1/66
+
+      interface Ethernet1/67
+
+      interface Ethernet1/68
+
+      interface Ethernet1/69
+
+      interface Ethernet1/70
+
+      interface Ethernet1/71
+
+      interface Ethernet1/72
+
+      interface Ethernet1/73
+
+      interface Ethernet1/74
+
+      interface Ethernet1/75
+
+      interface Ethernet1/76
+
+      interface Ethernet1/77
+
+      interface Ethernet1/78
+
+      interface Ethernet1/79
+
+      interface Ethernet1/80
+
+      interface Ethernet1/81
+
+      interface Ethernet1/82
+
+      interface Ethernet1/83
+
+      interface Ethernet1/84
+
+      interface Ethernet1/85
+
+      interface Ethernet1/86
+
+      interface Ethernet1/87
+
+      interface Ethernet1/88
+
+      interface Ethernet1/89
+
+      interface Ethernet1/90
+
+      interface Ethernet1/91
+
+      interface Ethernet1/92
+
+      interface Ethernet1/93
+
+      interface Ethernet1/94
+
+      interface Ethernet1/95
+
+      interface Ethernet1/96
+
+      interface Ethernet1/97
+
+      interface Ethernet1/98
+
+      interface Ethernet1/99
+
+      interface Ethernet1/100
+
+      interface Ethernet1/101
+
+      interface Ethernet1/102
+
+      interface Ethernet1/103
+
+      interface Ethernet1/104
+
+      interface Ethernet1/105
+
+      interface Ethernet1/106
+
+      interface Ethernet1/107
+
+      interface Ethernet1/108
+
+      interface Ethernet1/109
+
+      interface Ethernet1/110
+
+      interface Ethernet1/111
+
+      interface Ethernet1/112
+
+      interface Ethernet1/113
+
+      interface Ethernet1/114
+
+      interface Ethernet1/115
+
+      interface Ethernet1/116
+
+      interface Ethernet1/117
+
+      interface Ethernet1/118
+
+      interface Ethernet1/119
+
+      interface Ethernet1/120
+
+      interface Ethernet1/121
+
+      interface Ethernet1/122
+
+      interface Ethernet1/123
+
+      interface Ethernet1/124
+
+      interface Ethernet1/125
+
+      interface Ethernet1/126
+
+      interface Ethernet1/127
+
+      interface Ethernet1/128
+
+      interface mgmt0
+        ip address dhcp
+        vrf member management
+      line console
+        exec-timeout 0
+        terminal width  511
+      line vty
+      boot nxos bootflash:/nxos.9.2.3.bin
+
+      no logging console
+    image_definition: nxosv9000-9-2-3
+    tags: []
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        slot: 0
+        label: mgmt0
+        type: physical
+      - id: i2
+        slot: 1
+        label: Ethernet1/1
+        type: physical
+      - id: i3
+        slot: 2
+        label: Ethernet1/2
+        type: physical
+      - id: i4
+        slot: 3
+        label: Ethernet1/3
+        type: physical
+  - id: n0
+    label: csr1000v-0
+    node_definition: csr1000v
+    x: 200
+    y: -550
+    configuration: null
+    image_definition: csr1000v-161101b
+    tags: []
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        slot: 0
+        label: GigabitEthernet1
+        type: physical
+      - id: i2
+        slot: 1
+        label: GigabitEthernet2
+        type: physical
+      - id: i3
+        slot: 2
+        label: GigabitEthernet3
+        type: physical
+      - id: i4
+        slot: 3
+        label: GigabitEthernet4
+        type: physical
+links:
+  - id: l0
+    i1: i0
+    n1: n1
+    i2: i0
+    n2: n3
+  - id: l2
+    i1: i1
+    n1: n2
+    i2: i2
+    n2: n3
+  - id: l4
+    i1: i3
+    n1: n4
+    i2: i2
+    n2: n2
+  - id: l5
+    i1: i1
+    n1: n4
+    i2: i3
+    n2: n3
+  - id: l1
+    i1: i1
+    n1: n0
+    i2: i1
+    n2: n3
+  - id: l3
+    i1: i2
+    n1: n0
+    i2: i2
+    n2: n4
