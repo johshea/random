@@ -1,4 +1,7 @@
-CML - Import NSO-lab.yaml into CML. All interfaces connected to the bridge are set for dhcp. Based on the network scope for the bridge you may have to adjust the IPs int the nso-env.yml file to allow for proper communication currently they are using 172.16.149.0/24 space. You can also set the interfaces with static IPs and match them in NSO.
+CML - Import NSO-lab.yaml into CML. All interfaces connected to the bridge are set for dhcp. 
+Based on the network scope for the bridge you may have to adjust the IPs int the nso-env.yml file to allow 
+for proper communication currently they are using 172.16.149.0/24 space. You can also set the 
+interfaces with static IPs and match them in NSO.
 
 NSO - Create Authgroups for CML Lab
 	- from the server commandline type: ncs_cli -C -u admin
